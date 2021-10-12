@@ -7,7 +7,6 @@ This is a code review training project for Ruby/Rails.
 There are 7 classes and these classes are connected through database associations.
 
 ## Built with
-* Postgresql
 * rubocop linters
 - <code><img height="20" src="https://www.ruby-lang.org/images/header-ruby-logo.png"></code><br>
 -  <code><img height="20" src="https://rubyonrails.org/images/rails-logo.svg"></code><br>
@@ -32,38 +31,6 @@ Before you start using the app, you need to be sure that you have Ruby installed
 You should see your version of ruby.
 If it's not installed in your system, follow this [guide](https://www.ruby-lang.org/en/documentation/installation/) and it will help you to get it done.
 
-Then you can install rails using this command,
-```
- gem install rails
-```
-And you can also check your rails version by typing in your terminal
-```
- rails -version
-```
-After that do bundle install to install all required gems and dependences
-```
- bundle install
-```
-Install yarn by running the command below
-```
- yarn install
-```
-Since we are using postgresql database, run this command in your tenimal to create the database
-```
- rails db:create
-```
-Finally, run the migration to populate your database to have the tables
-```
- rails db:migrate
-```
-You then interract with the program from rails server on the web by
-```
- rails s
-```
-Open your favourite blowser and type the command below
-```
- http://localhost:3000
-```
 ## Contributors
 
 ## Elisha Kyakopo

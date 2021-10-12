@@ -3,14 +3,17 @@ require './person'
 
 # rentals class
 class Rental
-  attr_accessor :date
+  attr_accessor :date, :book, :person
 
-  def initialize(date)
+  def initialize(date, book, person)
     @date = date
-    @person = Person.new
-    @book = Book.new
-  end
+    @book = book
+    @person = person
 
-  belongs_to :book
-  belongs_to :person
+    @book = book
+    book.rentals << self
+  
+    @person = person
+    person.rentals << self
+  end
 end

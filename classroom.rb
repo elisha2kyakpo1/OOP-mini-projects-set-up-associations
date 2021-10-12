@@ -6,5 +6,11 @@ class Classroom
     @label = label
   end
 
-  has_many :students
+  attr_reader :students
+
+  def add_student(student)
+    @students << student
+    student.classroom = self
+  end
+
 end
