@@ -43,7 +43,7 @@ If it's not installed in your system, follow this [guide](https://www.ruby-lang.
 
 ## Contributions
 
-Contributions, issues and requests are welcome
+Contributions, [issues](https://github.com/elisha2kyakpo1/OOP-mini-projects-set-up-associations/issues) and requests are welcome
 
 ## Show support
 
