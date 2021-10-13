@@ -1,50 +1,42 @@
-# school_library_associations_training
-
-## About
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# School library
 
 This is a code review training project for Ruby/Rails.
 
-There are 7 classes and these classes are connected through database associations.
+## Built With
+* Ruby
+* Rubocop
 
-## Built with
-* rubocop linters
-- <code><img height="20" src="https://www.ruby-lang.org/images/header-ruby-logo.png"></code><br>
--  <code><img height="20" src="https://rubyonrails.org/images/rails-logo.svg"></code><br>
-- ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)&nbsp;<br>
-- ![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)&nbsp;<br>
-- ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
 ## Getting Started
-
-## Have a copy
-
-## Getting started
-
-To get started, you should first get this file in your local machine by cloning or forking this project or typing in your terminal
-```
- git clone https://github.com/elisha2kyakpo1/school_library_associations_training.git
- cd school_library_associations_training
-```
-Before you start using the app, you need to be sure that you have Ruby installed on your computer, by typing.
-```
- ruby -v
-```
-You should see your version of ruby.
-If it's not installed in your system, follow this [guide](https://www.ruby-lang.org/en/documentation/installation/) and it will help you to get it done.
+* Download or clone the repository
+* Navigate to project Directory
+* If you have ruby installed in your system,  just open the terminal and run `ruby main.rb`.
 
 ## Contributors
 
-## Elisha Kyakopo
+👤 **Rukundo Eric**
 
-  Linkedin: [Elisha Kyakopo](https://www.linkedin.com/in/elisha-kyakopo/)
+- GitHub: [@rukundoeric](https://github.com/rukundoeric)
+- Twitter: [@rukundoeric005](https://twitter.com/rukundoeric005)
+- LinkedIn: [Rukundo Eric](https://www.linkedin.com/in/rukundo-eric-000bba181/)
 
-  Github: [@elisha2kyakpo1](https://github.com/elisha2kyakpo1)
+👤 **Elisha Kyakopo**
 
-  Twitter: [@elisha1k](https://twitter.com/Elisha1k)
+- Github: [@elisha2kyakpo1](https://github.com/elisha2kyakpo1)
+- Twitter: [@elisha1k](https://twitter.com/Elisha1k)
+- Linkedin: [Elisha Kyakopo](https://www.linkedin.com/in/elisha-kyakopo/)
 
-## Contributions
+  
 
-Contributions, [issues](https://github.com/elisha2kyakpo1/OOP-mini-projects-set-up-associations/issues) and requests are welcome
+## 🤝 Contributing
 
-## Show support
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues](https://github.com/elisha2kyakpo1/OOP-mini-projects-set-up-associations/issues) page.
 
-Give a star if you like the project
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
