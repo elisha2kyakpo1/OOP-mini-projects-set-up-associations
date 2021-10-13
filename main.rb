@@ -120,6 +120,7 @@ def start(app)
   operate(input, app)
 end
 
+# rubocop: disable Metrics/CyclomaticComplexity
 def operate(input, app)
   case input
   when '1'
@@ -141,6 +142,7 @@ def operate(input, app)
   end
   start(app)
 end
+# rubocop: enable Metrics/CyclomaticComplexity
 
 def main
   app = App.new
