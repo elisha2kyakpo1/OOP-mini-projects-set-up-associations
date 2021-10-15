@@ -1,7 +1,6 @@
 require './corrector'
 require './rentals'
 
-# persons class
 class Person
   attr_accessor :name, :age, :rentals
   attr_reader :id

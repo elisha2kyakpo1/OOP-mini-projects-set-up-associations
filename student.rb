@@ -1,6 +1,5 @@
 require './person'
 
-# students class
 class Student < Person
   attr_reader :classroom
 

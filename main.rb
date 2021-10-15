@@ -24,7 +24,7 @@ class App
     end
   end
 
-  # rubocop: disable Metrics/MethodLength
+ 
   def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     person_type = gets.chomp
@@ -57,7 +57,6 @@ class App
     @people << person
     puts 'Person created successfully'
   end
-  # rubocop: enable Metrics/MethodLength
 
   def create_book
     print 'Title: '
@@ -120,7 +119,6 @@ def start(app)
   operate(input, app)
 end
 
-# rubocop: disable Metrics/CyclomaticComplexity
 def operate(input, app)
   case input
   when '1'
@@ -142,7 +140,6 @@ def operate(input, app)
   end
   start(app)
 end
-# rubocop: enable Metrics/CyclomaticComplexity
 
 def main
   app = App.new
