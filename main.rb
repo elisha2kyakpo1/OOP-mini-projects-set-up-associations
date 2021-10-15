@@ -112,6 +112,13 @@ def display_options
   puts '7 - Exit'
 end
 
+def exit_remarks
+  puts 'Thanks for School Library application'
+  sleep(2)
+  puts "Exiting application now..\n\n"
+  sleep(1)
+end
+
 def start(app)
   display_options
   input = gets.chomp
@@ -133,6 +140,7 @@ def operate(input, app)
   when '6'
     app.list_rentals_for_person_id
   when '7'
+    exit_remarks
     exit
   else
     puts "\nWrong input! Please Select the Available Option\n"
