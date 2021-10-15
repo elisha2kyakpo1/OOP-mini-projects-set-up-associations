@@ -14,6 +14,12 @@ This is a code review training project for Ruby/Rails.
 
 ## Contributors
 
+👤 **Robret Loterh**
+
+- Github: [@rloterh](https://github.com/rloterh)
+- Twitter: [@Rloterh](https://twitter.com/Rloterh)
+- Linkedin: [Robert Loterh](https://www.linkedin.com/in/rloterh/)
+
 👤 **Rukundo Eric**
 
 - GitHub: [@rukundoeric](https://github.com/rukundoeric)
@@ -25,6 +31,8 @@ This is a code review training project for Ruby/Rails.
 - Github: [@elisha2kyakpo1](https://github.com/elisha2kyakpo1)
 - Twitter: [@elisha1k](https://twitter.com/Elisha1k)
 - Linkedin: [Elisha Kyakopo](https://www.linkedin.com/in/elisha-kyakopo/)
+
+
 
   
 
