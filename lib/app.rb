@@ -1,54 +1,62 @@
+require_relative '../rentals'
+
 class App
-  
+  attr_accessor :s_has_permission, :s_list_books, :s_list_people, :s_invalid, :g_age, :g_name, :s_create_person_q, :g_person_type, :g_parent_permission
   def initialize
     @books = []
     @people = []
     @rentals = []
+    @s_has_permission = 'Has parent permission? [Y/N]: '
+    @s_list_books = ''
+    @s_list_people = ''
+    @s_invalid = 'Invalid option'
+    @g_age = ''
+    @g_name = ''
+    @s_create_person_q = 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    @g_person_type = ''
+    @g_parent_permission = ''
   end
 
   def list_books
     @books.each do |book|
-      puts "Title: \"#{book.title}\", Author: #{book.author}"
+      @s_list_books = "Title: \"#{book.title}\", Author: #{book.author}"
+      p_list_books
     end
   end
 
   def list_people
     @people.each do |person|
-      puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      @s_list_people = "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      p_list_people
     end
   end
 
   def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-    person_type = gets.chomp
-    if person_type != '1' && person_type != '2'
-      puts 'Invalid option'
-      return
+    p_create_person_q
+    p_person_type
+    if @g_person_type != '1' && @g_person_type != '2'
+      p_invalid
     end
 
-    print 'Age: '
-    age = gets.chomp
-
-    print 'Name: '
-    name = gets.chomp
+    p_create_person
 
     person =
-      case person_type
+      case @g_person_type
       when '1'
-        print 'Has parent permission? [Y/N]: '
-        parent_permission = gets.chomp
-        parent_permission = parent_permission.downcase == 'y'
+        p_permission
+        p_parent_permission
+        @g_parent_permission = @g_parent_permission.downcase == 'y'
 
-        Student.new(age, name, parent_permission)
+        Student.new(@g_age, @g_name, @g_parent_permission)
       when '2'
         print 'Specialization: '
         specialization = gets.chomp
 
-        Teacher.new(age, specialization, name)
+        Teacher.new(@g_age, specialization, @g_name)
       end
 
     @people << person
-    puts 'Person created successfully'
+    puts "\nPerson created successfully"
   end
 
   def create_book
@@ -59,7 +67,7 @@ class App
     author = gets.chomp
 
     @books << Book.new(title, author)
-    puts 'Book created successfully'
+    puts "\nBook created successfully"
   end
 
   def create_rental

@@ -1,7 +1,6 @@
 require_relative './student'
 require_relative './classroom'
 require_relative './person'
-require_relative './rentals'
 require_relative './teacher'
 require_relative './book'
 require_relative './lib/app'
@@ -15,6 +14,22 @@ def display_options
   puts '5 - Create a rental'
   puts '6 - List of all rentals for a given person id'
   puts "7 - Exit\n\n"
+end
+
+def p_permission; puts @s_has_permission.to_s; end
+def p_list_books; puts @s_list_books.to_s; end
+def p_list_people; puts @s_list_people.to_s; end
+def p_invalid; puts @s_invalid.to_s; end
+def p_create_person_q; puts @s_create_person_q.to_s; end
+
+def p_person_type; @g_person_type = gets.strip; end
+def p_parent_permission; @g_parent_permission = gets.strip; end
+
+def p_create_person
+  print 'Age: '
+  @g_age = gets.strip
+  print 'Name: '
+  @g_name = gets.strip
 end
 
 def exit_remarks
