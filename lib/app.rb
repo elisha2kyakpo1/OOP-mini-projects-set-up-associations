@@ -1,7 +1,9 @@
 require_relative '../rentals'
 
 class App
-  attr_accessor :s_has_permission, :s_list_books, :s_list_people, :s_invalid, :g_age, :g_name, :s_create_person_q, :g_person_type, :g_parent_permission
+  attr_accessor :s_has_permission, :s_list_books, :s_list_people, :s_invalid, :g_age, :g_name, :s_create_person_q,
+                :g_person_type, :g_parent_permission
+
   def initialize
     @books = []
     @people = []
@@ -34,9 +36,7 @@ class App
   def create_person
     p_create_person_q
     p_person_type
-    if @g_person_type != '1' && @g_person_type != '2'
-      p_invalid
-    end
+    p_invalid if @g_person_type != '1' && @g_person_type != '2'
 
     p_create_person
 

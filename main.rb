@@ -16,14 +16,33 @@ def display_options
   puts "7 - Exit\n\n"
 end
 
-def p_permission; puts @s_has_permission.to_s; end
-def p_list_books; puts @s_list_books.to_s; end
-def p_list_people; puts @s_list_people.to_s; end
-def p_invalid; puts @s_invalid.to_s; end
-def p_create_person_q; puts @s_create_person_q.to_s; end
+def p_permission
+  puts @s_has_permission.to_s
+end
 
-def p_person_type; @g_person_type = gets.strip; end
-def p_parent_permission; @g_parent_permission = gets.strip; end
+def p_list_books
+  puts @s_list_books.to_s
+end
+
+def p_list_people
+  puts @s_list_people.to_s
+end
+
+def p_invalid
+  puts @s_invalid.to_s
+end
+
+def p_create_person_q
+  puts @s_create_person_q.to_s
+end
+
+def p_person_type
+  @g_person_type = gets.strip
+end
+
+def p_parent_permission
+  @g_parent_permission = gets.strip
+end
 
 def p_create_person
   print 'Age: '
