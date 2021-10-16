@@ -2,7 +2,10 @@ require_relative '../rentals'
 
 class App
   attr_accessor :s_has_permission, :s_list_books, :s_list_people, :s_invalid, :g_age, :g_name, :s_create_person_q,
-                :g_person_type, :g_parent_permission
+                :g_person_type, :g_parent_permission, :g_specialization, :s_created_person_success, :g_title,
+                :g_author, :s_created_book_success, :s_created_rental_q, :s_created_rental, :s2_created_rental,
+                :g_book_index, :s3_p_created_rental, :g_person_index, :g_date, :s_rental_success,
+                :s_rentals, :s_rental_person
 
   def initialize
     @books = []
@@ -17,6 +20,22 @@ class App
     @s_create_person_q = 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     @g_person_type = ''
     @g_parent_permission = ''
+
+    @g_specialization = ''
+    @s_created_person_success = "\nPerson created successfully"
+    @g_title = ''
+    @g_author = ''
+    @s_created_book_success = "\nBook created successfully"
+    @s_created_rental_q = 'Select a book from the following list by number'
+    @s_created_rental = ''
+    @s2_created_rental = "\nSelect a person from the following list by number (not id)"
+    @g_book_index = ''
+    @s3_p_created_rental = ''
+    @g_person_index = ''
+    @g_date = ''
+    @s_rental_success = 'Rental created successfully'
+    @s_rentals = 'Rentals:'
+    @s_rental_person = ''
   end
 
   def list_books
@@ -49,56 +68,48 @@ class App
 
         Student.new(@g_age, @g_name, @g_parent_permission)
       when '2'
-        print 'Specialization: '
-        specialization = gets.chomp
-
-        Teacher.new(@g_age, specialization, @g_name)
+        p_specialization
+        Teacher.new(@g_age, @g_specialization, @g_name)
       end
 
     @people << person
-    puts "\nPerson created successfully"
+    p_created_person_success
   end
 
   def create_book
-    print 'Title: '
-    title = gets.chomp
-
-    print 'Author: '
-    author = gets.chomp
-
-    @books << Book.new(title, author)
-    puts "\nBook created successfully"
+    p_create_book
+    @books << Book.new(@g_title, @g_author)
+    p_created_book_success
   end
 
   def create_rental
-    puts 'Select a book from the following list by number'
+    p_created_rental_q
     @books.each_with_index do |book, index|
-      puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
+      @s_created_rental = "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
+      p_created_rental
     end
-    book_index = gets.chomp.to_i
+    p_book_index
 
-    puts "\nSelect a person from the following list by number (not id)"
+    p_created_rental_q2
     @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      @s3_p_created_rental = "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      p_created_rental_q3
     end
 
-    person_index = gets.chomp.to_i
+    p_person_index
+    p_date
 
-    print "\nDate: "
-    date = gets.chomp
-
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
-    puts 'Rental created successfully'
+    @rentals << Rental.new(@g_date, @books[@g_book_index], @people[@g_person_index])
+    p_rental_success
   end
 
   def list_rentals_for_person_id
-    print 'ID of person: '
-    id = gets.chomp.to_i
-
-    rentals = @rentals.filter { |rental| rental.person.id == id }
-    puts 'Rentals:'
+    p_person_id
+    rentals = @rentals.filter { |rental| rental.person.id == @g_id }
+    p_rentals
     rentals.each do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+      @s_rental_person = "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+      p_rental_person
     end
   end
 end

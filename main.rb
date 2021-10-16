@@ -4,6 +4,7 @@ require_relative './person'
 require_relative './teacher'
 require_relative './book'
 require_relative './lib/app'
+require_relative './lib/operation'
 
 def display_options
   puts "\nPlease choose an option by entering a number:"
@@ -14,6 +15,10 @@ def display_options
   puts '5 - Create a rental'
   puts '6 - List of all rentals for a given person id'
   puts "7 - Exit\n\n"
+end
+
+def p_line_break
+  puts "\n"
 end
 
 def p_permission
@@ -51,8 +56,74 @@ def p_create_person
   @g_name = gets.strip
 end
 
+def p_specialization
+  print 'Specialization: '
+  @g_specialization = gets.strip
+end
+
+def p_created_person_success
+  puts @s_created_person_success.to_s
+end
+
+def p_created_book_success
+  puts @s_created_book_success.to_s
+end
+
+def p_rental_success
+  puts @s_rental_success.to_s
+end
+
+def p_created_rental
+  puts @s_created_rental.to_s
+end
+
+def p_created_rental_q
+  puts @s_created_rental_q.to_s
+end
+
+def p_created_rental_q2
+  puts @s2_created_rental.to_s
+end
+
+def p_created_rental_q3
+  puts @s3_p_created_rental.to_s
+end
+
+def p_person_index
+  @g_person_index = gets.strip.to_i
+end
+
+def p_rentals
+  puts @s_rentals.to_s
+end
+
+def p_rental_person
+  puts @s_rental_person.to_s
+end
+
+def p_create_book
+  print 'Title: '
+  @g_title = gets.strip
+  print 'Author: '
+  @g_author = gets.strip
+end
+
+def p_date
+  print "\nDate: "
+  @g_date = gets.strip.to_s
+end
+
+def p_person_id
+  print "\nID of person: "
+  @g_id = gets.strip.to_i
+end
+
+def p_book_index
+  @g_book_index = gets.strip.to_i
+end
+
 def exit_remarks
-  puts 'Thanks for School Library application'
+  puts 'Thanks for using School Library application'
   sleep(2)
   puts "Exiting application now..\n\n"
   sleep(1)
@@ -61,36 +132,8 @@ end
 def start(app)
   display_options
   input = gets.chomp
-  operate(input, app)
-end
-
-def operate(input, app)
-  case input
-  when '1'
-    puts "\n"
-    app.list_books
-  when '2'
-    puts "\n"
-    app.list_people
-  when '3'
-    puts "\n"
-    app.create_person
-  when '4'
-    puts "\n"
-    app.create_book
-  when '5'
-    puts "\n"
-    app.create_rental
-  when '6'
-    puts "\n"
-    app.list_rentals_for_person_id
-  when '7'
-    exit_remarks
-    exit
-  else
-    puts "\nWrong input! Please Select the Available Option\n"
-  end
-  start(app)
+  opp = Operation.new
+  opp.operate(input, app)
 end
 
 def main
